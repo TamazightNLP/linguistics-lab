@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Linguistics Lab </title>
+
+<link rel="stylesheet" href="/static/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/static/style.css" type="text/css" media="screen" />
+<link href="/static/lightbox/css/lightbox.css" rel="stylesheet" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans|Baumans' rel='stylesheet' type='text/css'/>
+
+<script src="/static/js/modernizr.js"></script>
+<script src="/static/js/respond.min.js"></script>
+
+
+<!-- include extern jQuery file but fall back to local file if extern one fails to load !-->
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script type="text\/javascript" src="js\/1.7.2.jquery.min"><\/script>')</script>
+
+
+<script src="/static/lightbox/js/lightbox.js"></script>
+<script src="/static/js/prefixfree.min.js"></script>
+<script src="/static/js/jquery.slides.min.js"></script>
+</head>
+<body>
+	<header>
+<h1>Linguistics Lab </h1>
+<p>Berber morphology</p>
+<div class="toggleMobile">
+<span class="menu1"></span>
+<span class="menu2"></span>
+<span class="menu3"></span></div>
+<div id="mobileMenu">
+<ul class='tabs'>
+
+<li rel='tab0'><a href="/home">Home</a></li>
+<li rel='tab1'><a href="/plural2">Plurals</a></li>
+<li rel="tab2"><a href="/root">Roots</a></li>
+</ul></div>
+<!--<nav>
+<ul>
+<li><a href="javascript:void(0)">Home</a></li>
+<li><a href="javascript:void(0)">Porfolio</a></li>
+<li><a href="javascript:void(0)">About</a></li>
+<li><a href="javascript:void(0)">Contact</a></li></ul>
+</nav> -->
+</header>
+
+<section class="container">
+<h2 class="hidden">Lorem Ipsum</h2>
+<article id="slider_content1"></article>
+<article id="slider_content2"></article>
+<article id="slider_content3"></article>
+<div id="slides">
+<img src="img/slide1.jpg" alt="Some alt text">
+<img src="img/slide2.jpg" alt="Some alt text">
+<img src="img/slide3.jpg" alt="Some alt text"></div></section>
+
+
+
+<script>
+    $(function(){
+$("button").click(function(){
+	//alert('hello ajax');
+ 
+  //$("#letter").html($('input:text').val()+ $(this).text());
+  //alert('hi');
+
+  var text= $(this).text();
+    $("#search").val($("#search").val()+ $(this).text());
+
+});
+
+$(".tab_content").hide();
+	$(".tab_content:first").show(); 
+
+	$("ul.tabs li").click(function() {
+		$("ul.tabs li").removeClass("active");
+		$(this).addClass("active");
+		$(".tab_content").hide();
+		var activeTab = $(this).attr("rel"); 
+		$("#"+activeTab).fadeIn(); 
+	});
+});
+
+    </script>
+
+
+
+
+
+
+
+{% block content %}
+
+	{% endblock %}
+
+
+
+
+<!--<script src="/static/js/jquery-2.1.0.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>-->
+</body>
+</html>
