@@ -1,0 +1,84 @@
+
+{% extends "base2.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Plural forms</title>
+	
+    
+	
+</head>
+
+<body>
+
+<section id="spacer">
+<h2 class="hidden">Root</h2>
+<p>Look up the root of a kabyle noun: </p>
+<div class="search">
+<form action="#">
+<input id='search' type="text" name="word" value=" "/>
+<input type="submit" name="start_search" class="button" value="Search"/></form></div></section>
+
+
+<div id="thebuttons">
+
+
+<button>&#269;</button>
+<button>&#7693;</button>
+<button>&#287;</button>
+<button>&#7717;</button>
+<button>&#1297;</button>
+<button>&#947;</button>
+<button>&#7779;</button>
+<button>&#7789;</button>
+<button>&#7827;</button>
+<button>&#268;</button>
+<button>&#286;</button>
+<button>&#7716;</button>
+<button>&#1296;</button>
+<button>&#404;</button>
+<button>&#7778;</button>
+<!--<textarea type="text" value="enter the letter"></textarea>-->
+
+</div>
+<ul id='liste'>
+</ul>
+
+	{% if items %}
+
+	   {% for word in items %}
+	   <!-- <input type='hidden' name='word' value='{{word}}'> -->
+	   {% endfor %}
+	   {% endif %}
+	   <!--<input type='submit'>-->
+	   <!--<input type='reset'>-->
+
+	 {% if items %}
+
+	<br>
+	<hr>
+
+
+
+	<h2 class="results">Root form: </h2><br>
+	<ul class="results">
+	{% for word in items %}
+	
+		{{word }} : {{root(word)}}
+		
+	
+
+            
+	</ul>	
+
+</form>
+
+</body>
+</html>
+
+
+{% endfor %}
+{% endif %}
+{% endblock %}
+	
