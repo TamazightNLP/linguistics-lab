@@ -1,3 +1,7 @@
-The application contains two sections:
-a. Roots: When you enter a Berber word, the application returns the root of that word.
+
+
+The application uses Python on the server side and runs on Google App Engine.
+The application deals with Berber Morphology. 
+The input (a Kabyle word) is parsed and then returns the following results:
+a. Roots: the application returns the root of that word.
 b. Plural: This returns the plural of nouns.
