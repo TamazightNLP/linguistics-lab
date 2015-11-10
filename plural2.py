@@ -8,7 +8,9 @@ import cgi
 template_dir=os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env=jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir),
 	autoescape=True)
-
+	
+# This the main function that analyses the input and returns the plural form.
+# Please refer to the home page of the application for an explanation of plural formation in Kabyle.
 def kaPlural (word):
   if word[0]=='a':
     word= 'i' + word[1:]+'en'
@@ -33,20 +35,12 @@ class Handler(webapp2.RequestHandler):
 		self.response.out.write(*a, **kw)
 
 	
-       
-
-
-
-#def get(self):
- #       f= {'&#268;': lambda x: '&#268;',
-  #      '&#286;': lambda x: '&#286;',}
         
 
 
 class PluralForm(Handler):
 
-    #def render_front(self, word="", error=""):
-     #   self.render("plural.html", word=word, error=error)
+   
 
     def get(self):
         items=self.request.get_all('word')
@@ -56,31 +50,8 @@ class WelcomePage(Handler):
     def get(self):
         self.render('home.html')
 
-
-#class UpdateHandler(Handler):
- #   def get(self):
-  #      self.render('ajaxTemplate.html')
-   # def post(self):
-    #    x=self.request.get('tournament')
-     #   self.response.out.write(x)
-
-
-    #def post(self):
-        #text=self.request.get_all("word")
-        #self.render_front(kaPlural(self.request.get("word")))
-
-		#text=kaPlural(self.request.get("word"))
-		#self.response.out.write(text)
-
-	
-
-
-	
-	
-
-
 app = webapp2.WSGIApplication([('/plural2', PluralForm),
 			    ('/home', WelcomePage)],
-			    debug=True)
+			    debug=False)
 		
 #('/update', UpdateHandler)
