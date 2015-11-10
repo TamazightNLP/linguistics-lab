@@ -9,7 +9,8 @@ template_dir=os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env=jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir),
 	autoescape=True)
 
-
+# The root def first removes any duplicate consonant in the word, then it removes the vowels and lastly
+# it concatenates the remaining consonants, which form the root of the word.
 def root(word):
 	removeDuplicates= re.sub(r'([a-z])\1+', r'\1', word)
 	removeVowels= re.findall(r'[^aeiou]', removeDuplicates)
