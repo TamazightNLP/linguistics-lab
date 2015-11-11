@@ -12,6 +12,7 @@ jinja_env=jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir),
 # This the main function that analyses the input and returns the plural form.
 # Please refer to the home page of the application for an explanation of plural formation in Kabyle.
 def kaPlural (word):
+  word= word.lower()
   if word[0]=='a':
     word= 'i' + word[1:]+'en'
     return word
